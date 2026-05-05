@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ServiceAreaLeafletMap } from "./ServiceAreaLeafletMap";
 
 const pills = [
   "Wilmington",
@@ -33,13 +34,7 @@ export function ServiceAreaMap() {
         </div>
 
         <div className="mt-12 grid gap-10 lg:grid-cols-2 lg:items-start">
-          <div
-            className="flex min-h-[320px] items-center justify-center rounded-2xl border border-slate-200 bg-slate-100 text-slate-500 shadow-inner"
-            role="img"
-            aria-label="Interactive map placeholder"
-          >
-            Interactive Map
-          </div>
+          <ServiceAreaLeafletMap />
           <div>
             <h3 className="font-display text-2xl font-bold text-navy">
               Our Service Areas

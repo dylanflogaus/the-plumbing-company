@@ -1,6 +1,5 @@
-import Image from "next/image";
 import { CheckCircle2 } from "lucide-react";
-import { BLUR_DATA_URL, IMAGES, LICENSE } from "@/lib/constants";
+import { LICENSE } from "@/lib/constants";
 
 const features = [
   {
@@ -24,8 +23,8 @@ const features = [
 export function WhyUs() {
   return (
     <section className="bg-white py-20" aria-labelledby="why-heading">
-      <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 lg:grid-cols-2 lg:px-6">
-        <div>
+      <div className="mx-auto max-w-7xl px-4 lg:px-6">
+        <div className="mx-auto max-w-3xl">
           <p className="text-sm font-bold uppercase tracking-widest text-orange">
             Why choose us
           </p>
@@ -58,6 +57,23 @@ export function WhyUs() {
             ))}
           </ul>
 
+          <div className="mt-10 rounded-xl border border-navy/10 bg-slate-50 p-5 shadow-sm">
+            <div className="flex items-center gap-3">
+              <div
+                className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand/15 font-display font-bold text-brand"
+                aria-hidden
+              >
+                JD
+              </div>
+              <div>
+                <p className="font-display font-bold text-navy">John D., Owner</p>
+                <p className="mt-1 text-sm text-slate-600">
+                  Family-owned since 2005. We treat every home like our own.
+                </p>
+              </div>
+            </div>
+          </div>
+
           <div className="mt-10 flex flex-wrap gap-3">
             {["BBB A+", "Google Guaranteed", "HomeAdvisor Elite"].map((t) => (
               <span
@@ -67,38 +83,6 @@ export function WhyUs() {
                 {t}
               </span>
             ))}
-          </div>
-        </div>
-
-        <div className="relative">
-          <div className="relative overflow-hidden rounded-2xl shadow-lift">
-            <div className="relative aspect-[5/6] w-full bg-navy-light">
-              <Image
-                src={IMAGES.whyOwner}
-                alt="Owner reviewing plumbing work with a homeowner"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                placeholder="blur"
-                blurDataURL={BLUR_DATA_URL}
-              />
-            </div>
-          </div>
-          <div className="absolute bottom-4 left-4 max-w-[280px] rounded-xl bg-white p-4 shadow-lift md:bottom-8 md:left-8 md:p-5">
-            <div className="flex items-center gap-3">
-              <div
-                className="flex h-11 w-11 items-center justify-center rounded-full bg-brand/15 font-display font-bold text-brand"
-                aria-hidden
-              >
-                JD
-              </div>
-              <div>
-                <p className="font-display font-bold text-navy">John D., Owner</p>
-                <p className="text-sm text-slate-600">
-                  Family-owned since 2005. We treat every home like our own.
-                </p>
-              </div>
-            </div>
           </div>
         </div>
       </div>

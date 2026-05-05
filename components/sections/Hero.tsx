@@ -115,7 +115,7 @@ export function Hero() {
             <div className="relative aspect-[4/5] w-full bg-navy-light md:aspect-square">
               <Image
                 src={IMAGES.heroTeam}
-                alt="Commercial piping, valves, and fittings installed on brick — expert plumbing work"
+                alt="Friendly plumber working under a kitchen sink on drain pipes"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 40vw"
