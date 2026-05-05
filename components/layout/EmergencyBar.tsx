@@ -9,7 +9,7 @@ export function EmergencyBar() {
       className="sticky top-0 z-[60] bg-orange pt-[env(safe-area-inset-top,0px)] text-white"
       role="banner"
     >
-      <div className="mx-auto flex min-h-[44px] items-center justify-between gap-2 px-3 sm:gap-3 sm:px-4 md:h-10 md:min-h-0 md:px-6">
+      <div className="mx-auto flex min-h-[40px] items-center justify-between gap-2 px-3 sm:min-h-[44px] sm:gap-3 sm:px-4 md:h-10 md:min-h-0 md:px-6">
         <div className="flex min-w-0 flex-1 items-center gap-2 md:flex-none">
           <span
             className="relative flex h-2 w-2 shrink-0"
@@ -30,7 +30,7 @@ export function EmergencyBar() {
         <a
           href={PHONE_HREF}
           onClick={() => trackPhoneClick("emergency-bar")}
-          className="inline-flex min-h-[44px] shrink-0 touch-manipulation items-center justify-center whitespace-nowrap rounded-full bg-white px-3.5 text-sm font-bold text-orange shadow-sm transition active:scale-[0.98] hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-orange md:min-h-0 md:h-7 md:px-2.5 md:text-xs md:leading-none"
+          className="inline-flex h-9 shrink-0 touch-manipulation items-center justify-center whitespace-nowrap rounded-full bg-white px-2.5 text-xs font-bold leading-none text-orange shadow-sm transition active:scale-[0.98] hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-orange md:h-7 md:px-2.5"
           aria-label={`Call emergency line ${PHONE}`}
         >
           {PHONE}

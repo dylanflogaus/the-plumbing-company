@@ -20,7 +20,7 @@ export function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-[calc(2.75rem+env(safe-area-inset-top,0px))] z-50 border-b border-white/10 bg-navy shadow-md md:top-[calc(2.5rem+env(safe-area-inset-top,0px))]">
+    <header className="sticky top-[calc(2.5rem+env(safe-area-inset-top,0px))] z-50 border-b border-white/10 bg-navy shadow-md md:top-[calc(2.5rem+env(safe-area-inset-top,0px))]">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 md:px-6">
         <Link
           href="/"
@@ -84,8 +84,10 @@ export function Header() {
       <div
         id="mobile-nav"
         className={cn(
-          "overflow-hidden border-t border-white/10 bg-navy-dark transition-[max-height] duration-300 ease-out md:hidden",
-          open ? "max-h-[420px]" : "max-h-0"
+          "border-t border-white/10 bg-navy-dark transition-[max-height] duration-300 ease-out md:hidden",
+          open
+            ? "max-h-[min(85dvh,720px)] overflow-y-auto overscroll-y-contain"
+            : "max-h-0 overflow-hidden"
         )}
       >
         <nav
