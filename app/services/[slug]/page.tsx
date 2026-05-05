@@ -14,14 +14,14 @@ import {
 } from "@/lib/service-helpers";
 import { serviceIcon } from "@/lib/service-icons";
 
-type Props = { params: { slug: string } };
+type Props = { params: Promise<{ slug: string }> };
 
 export function generateStaticParams() {
   return SERVICES.map((s) => ({ slug: s.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const slug = params.slug;
+  const { slug } = await params;
   const service = getServiceBySlug(slug);
   if (!service) return {};
   return {
@@ -30,8 +30,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function ServiceDetailPage({ params }: Props) {
-  const slug = params.slug;
+export default async function ServiceDetailPage({ params }: Props) {
+  const { slug } = await params;
   const service = getServiceBySlug(slug);
   if (!service) notFound();
 
